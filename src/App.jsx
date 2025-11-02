@@ -4,14 +4,13 @@ import Hero3D from './components/Hero3D';
 import ProductsGrid from './components/ProductsGrid';
 import LeadModal from './components/LeadModal';
 import FooterContact from './components/FooterContact';
+import PizzaCooker3D from './components/PizzaCooker3D';
 import { CheckCircle2, Globe, Shield, Timer } from 'lucide-react';
 
 export default function App() {
   const [leadOpen, setLeadOpen] = useState(false);
 
   const handleLeadSubmit = (payload) => {
-    // In a full build, this would call the backend to store the lead and send the asset link.
-    // For now we optimistically close the modal and simulate a download.
     setLeadOpen(false);
     setTimeout(() => {
       alert('Thanks! We\'ll be in touch shortly.');
@@ -23,6 +22,7 @@ export default function App() {
       <Navbar onOpenLead={() => setLeadOpen(true)} />
       <main>
         <Hero3D onOpenLead={() => setLeadOpen(true)} />
+        <PizzaCooker3D />
         <ProductsGrid onRequireLead={() => setLeadOpen(true)} />
 
         <section id="why-us" className="relative py-20">
